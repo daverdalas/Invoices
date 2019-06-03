@@ -66,9 +66,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($invoice->items as $item)
+                @foreach ($invoice->items as $key => $item)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ ($key + 1) }}</td>
                         <td>{{ $item->get('id') }}</td>
                         <td>{{ $item->get('name') }}</td>
                         <td>{{ $item->get('price') }} {{ $invoice->formatCurrency()->symbol }}</td>
